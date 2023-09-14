@@ -1,6 +1,6 @@
 package shubha.entity;
 
-public class Employee {
+public class Emp {
 	
 	private Integer eid;
 	private String ename;

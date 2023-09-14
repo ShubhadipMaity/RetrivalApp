@@ -11,29 +11,21 @@
 <title>OUTPUT PAGE</title>
 </head>
 <body>
-			<h1 style=' color:green;text-align:center;'>
-				EMPLOYEE DATA			
-			</h1>
-			
-			
-			<%Employee emp =(Employee)request.getAttribute("employee"); %>
-			
-			
-			<table border='2' align="center">
-			<tr>
-			<th>EMP NO</th>
-			<th>EMP NAME</th>
-			<th>EMP AGE</th>
-			<th>EMP ADDRESS</th>
-			</tr>
-			
-			<tr>
-			<td><%=emp.getEid() %></td>
-			<td><%=emp.getEname() %></td>
-			<td><%=emp.getEage() %></td>
-			<td><%=emp.getEaddress() %></td>
-			</tr>
-			
-			</table>
+			<h1 style='color: red; text-align: center'>EMPLOYEE DATA</h1>
+<% Emp emp1 = (Emp)request.getAttribute("employee");%>
+<table border='1' align="center">
+<tr>
+<th>EID</th>
+<th>ENAME</th>
+<th>EAGE</th>
+<th>EADDRESS</th>
+</tr>
+<tr>
+<td><%=emp1.getEid()%></td>
+<td><%=emp1.getEname()%></td>
+<td><%=emp1.getEage()%></td>
+<td><%=emp1.getEaddress()%></td>
+</tr>
+</table>
 </body>
 </html>

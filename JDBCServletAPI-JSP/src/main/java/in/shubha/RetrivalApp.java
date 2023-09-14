@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shubha.Util.jdbcUtil;
-import shubha.entity.Employee;
+import shubha.entity.Emp;
 
 
 @WebServlet("/reterieve")
 public class RetrivalApp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String SELECT_SQL_QUERY = "select * from employee where eid=?";
+	private static final String SELECT_SQL_QUERY = "select * from emp where eid=?";
 
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,7 +44,7 @@ public class RetrivalApp extends HttpServlet {
 			
 			if(resultSet.next()) {
 								
-				Employee employee=new Employee();
+				Emp employee=new Emp();
 				employee.setEid(resultSet.getInt(1));
 				employee.setEname(resultSet.getString(2));
 				employee.setEage(resultSet.getInt(3));
@@ -55,6 +55,7 @@ public class RetrivalApp extends HttpServlet {
 				rd=request.getRequestDispatcher("success.jsp");
 				request.setAttribute("employee", employee);
 				rd.forward(request, response);
+				
 		
 			
 			}else {
